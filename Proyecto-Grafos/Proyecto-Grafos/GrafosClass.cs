@@ -10,36 +10,49 @@ namespace Proyecto_Grafos
         private int[,] matriz;
         private int nodos;
         public Dictionary<string, int> mapaIndices = new Dictionary<string, int> {
-            {"Parque Norte", 0}, {"Familia Herrera", 1}, {"CC Norte", 2}, 
-            {"Familia Pérez", 3}, {"Parque Central", 4}, {"Hospital", 5},
-            {"UCR", 6}, {"Iglesia", 7}, {"CC Sur", 8},
-            {"Familia López", 9}, {"Parque Sur", 10}, {"Familia Rodríguez", 11}
+            {"Italiano", 0}, {"Bar", 1}, {"Farmacia", 2}, {"Parque Norte", 3},
+            {"Familia Herrera", 4}, {"CC Norte", 5}, {"AFZ", 6}, {"Familia Perez", 7},
+            {"Parque Central", 8}, {"Hospital", 9}, {"UCR", 10}, {"Iglesia", 11},
+            {"CC Sur", 12}, {"Parque Diversiones", 13}, {"Familia Lopez", 14},
+            {"Parque Sur", 15}, {"Familia Rodriguez", 16}, {"Zoologico", 17},
+            {"Comida Rapida", 18}, {"Aeropuerto", 19}, {"Barberia", 20}
         };
 
         public Dictionary<int, string> mapaLetras = new Dictionary<int, string> {
-            {0, "Parque Norte"}, {1, "Familia Herrera"}, {2, "CC Norte"},
-            {3 , "Familia Pérez"}, {4 , "Parque Central"}, {5 , "Hospital"},
-            {6 , "UCR"}, {7 , "Iglesia"}, {8 , "CC Sur"},
-            {9 , "Familia López"}, {10 , "Parque Sur"}, {11 , "Familia Rodríguez"}
+            {0, "Italiano"}, {1, "Bar"}, {2, "Farmacia"}, {3, "Parque Norte"},
+            {4, "Familia Herrera"}, {5, "CC Norte"}, {6, "AFZ"}, {7, "Familia Perez"},
+            {8, "Parque Central"}, {9, "Hospital"}, {10, "UCR"}, {11, "Iglesia"},
+            {12, "CC Sur"}, {13, "Parque Diversiones"}, {14, "Familia Lopez"},
+            {15, "Parque Sur"}, {16, "Familia Rodriguez"}, {17, "Zoologico"},
+            {18, "Comida Rapida"}, {19, "Aeropuerto"}, {20, "Barberia"}
         };
 
         public GrafosClass()
         {
-            nodos = 12;
-            matriz = new int[12, 12] 
+            nodos = 21;
+            matriz = new int[21, 21] 
             {
-                { 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0 }, // Parque Norte
-                { 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0 }, // Familia Herrera
-                { 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0 }, // CC Norte
-                { 3, 0, 0, 0, 5, 0, 4, 0, 0, 0, 0, 0 }, // Familia Pérez
-                { 0, 4, 0, 5, 0, 4, 0, 2, 0, 0, 0, 0 }, // Parque Central
-                { 0, 0, 2, 0, 4, 0, 0, 0, 3, 0, 0, 0 }, // Hospital
-                { 0, 0, 0, 4, 0, 0, 0, 3, 0, 2, 0, 0 }, // UCR
-                { 0, 0, 0, 0, 2, 0, 3, 0, 1, 0, 1, 0 }, // Iglesia
-                { 0, 0, 0, 0, 0, 3, 0, 1, 0, 0, 0, 2 }, // CC Sur
-                { 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 5, 0 }, // Familia López
-                { 0, 0, 0, 0, 0, 0, 0, 1, 0, 5, 0, 3 }, // Parque Sur
-                { 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 3, 0 }  // Familia Rodríguez
+                { 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, //Italiano
+                { 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, //Bar
+                { 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, //Farmacia
+                { 1, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, //Parque Norte
+                { 0, 2, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, //Familia Herrera
+                { 0, 0, 4, 0, 0, 0, 3, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, //CC Norte
+                { 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0 }, //AFZ
+                { 0, 0, 0, 3, 0, 0, 0, 0, 5, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, //Familia Perez
+                { 0, 0, 0, 0, 4, 0, 0, 5, 0, 4, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0 }, //Parque Central
+                { 0, 0, 0, 0, 0, 2, 0, 0, 4, 0, 0, 0, 3, 5, 0, 0, 0, 0, 0, 0, 0 }, //Hospital
+                { 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 3, 0, 0, 2, 0, 0, 0, 0, 0, 0 }, //UCR
+                { 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 3, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0 }, //Iglesia
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 1, 0, 4, 0, 0, 2, 0, 0, 0, 0 }, //CC Sur
+                { 0, 0, 0, 0, 0, 0, 8, 0, 0, 5, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 10 }, //Parque Diversiones
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 5, 0, 3, 0, 0, 0 }, //Familia Lopez
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 5, 0, 3, 0, 2, 0, 0 }, //Parque Sur
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 3, 0, 0, 0, 1, 2 }, //Familia Rodriguez
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0 }, //Zoologico
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0 }, //Comida Rapida
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 4 }, //Aeropuerto
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0 }  //Barberia
             };            
         }
 
